@@ -1,11 +1,11 @@
-FROM python:3.9.13
+FROM python:3.9-alpine
 
-WORKDIR /discordgsm
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+WORKDIR /usr/src/app
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-
-RUN pip3 install -r requirements.txt
-
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
-RUN apt-get install -y nodejs
-RUN npm run build

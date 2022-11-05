@@ -129,7 +129,8 @@ dmypy.json
 .pyre/
 
 # discordgsm
+data/logs/*txt
 data/servers.db
+data/servers.sql
 node_modules
 public/static/guilds.json
-logs/*txt
